@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BizData Fit | Gestão de negócios fitness pelo WhatsApp</title>
+<meta name="description" content="BizData Fit é uma plataforma para negócios fitness baseados em aulas gerenciarem agendamentos, pacotes de aulas e o engajamento dos alunos pelo WhatsApp.">
+<link rel="canonical" href="https://bizdatafit.com.br/">
+<meta property="og:title" content="BizData Fit">
+<meta property="og:description" content="Agendamentos, pacotes de aulas e engajamento dos alunos pelo WhatsApp.">
+<meta property="og:url" content="https://bizdatafit.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3EBF%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f3f7f6;
+    --text: #13201e;
+    --muted: #4b5d5a;
+    --brand: #0f766e;
+    --brand-strong: #0b5c56;
+    --border: #dbe5e3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1514;
+      --bg-soft: #142120;
+      --text: #e8f0ee;
+      --muted: #a3b5b2;
+      --brand: #2dd4bf;
+      --brand-strong: #5eead4;
+      --border: #24403c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  header { border-bottom: 1px solid var(--border); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+  .logo-mark {
+    width: 32px; height: 32px; border-radius: 8px; background: var(--brand); color: var(--bg);
+    display: grid; place-items: center; font-size: 0.85rem; font-weight: 800;
+  }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 0.95rem; }
+  nav a:hover { color: var(--brand); }
+  .hero { padding: 72px 0 56px; }
+  .eyebrow { color: var(--brand); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 12px; }
+  h1 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.15; margin: 0 0 20px; max-width: 18ch; letter-spacing: -0.02em; }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 60ch; margin: 0; }
+  section { padding: 56px 0; }
+  section.soft { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); line-height: 1.25; margin: 0 0 12px; letter-spacing: -0.01em; }
+  .section-lead { color: var(--muted); margin: 0 0 32px; max-width: 62ch; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+  .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+  .card p { margin: 0; color: var(--muted); }
+  .icon { width: 40px; height: 40px; border-radius: 10px; background: var(--bg-soft); color: var(--brand); display: grid; place-items: center; margin-bottom: 16px; }
+  .icon svg { width: 22px; height: 22px; }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); counter-reset: step; }
+  .steps li { counter-increment: step; border-left: 3px solid var(--brand); padding: 4px 0 4px 20px; }
+  .steps li::before { content: "Passo " counter(step); display: block; color: var(--brand); font-weight: 600; font-size: 0.85rem; margin-bottom: 4px; }
+  .steps strong { display: block; margin-bottom: 4px; }
+  .steps span { color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+  .tags li { border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; background: var(--bg); }
+  footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--muted); font-size: 0.9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  @media (max-width: 560px) {
+    nav { display: none; }
+    .hero { padding: 48px 0 40px; }
+    section { padding: 44px 0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="BizData Fit, página inicial"><span class="logo-mark" aria-hidden="true">BF</span>BizData Fit</a>
+    <nav aria-label="Seções">
+      <a href="#recursos">Recursos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#para-quem">Para quem</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="eyebrow">Plataforma para negócios fitness</p>
+    <h1>Gerencie seu negócio fitness pelo WhatsApp.</h1>
+    <p class="lead">A BizData Fit é uma plataforma para negócios fitness baseados em aulas. Ela ajuda a gerenciar agendamentos, pacotes de aulas e o engajamento dos alunos pelo WhatsApp, nas ferramentas que você e seus alunos já usam.</p>
+  </div>
+
+  <section class="soft" id="recursos">
+    <div class="wrap">
+      <h2>O que a BizData Fit faz</h2>
+      <p class="section-lead">Os alunos resolvem tudo em uma conversa. A equipe acompanha cada aluno com registros confiáveis.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></div>
+          <h3>Agendamentos</h3>
+          <p>Os alunos consultam horários e reservam aulas pelo WhatsApp, com a confirmação registrada no sistema do negócio.</p>
+        </div>
+        <div class="card">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
+          <h3>Pacotes de aulas</h3>
+          <p>Acompanhe pacotes e créditos de aulas de cada aluno, do primeiro pacote às renovações.</p>
+        </div>
+        <div class="card">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 21l2-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
+          <h3>Engajamento dos alunos</h3>
+          <p>Lembretes, acompanhamento e atendimento pelo WhatsApp, com a equipe assumindo a conversa quando necessário.</p>
+        </div>
+        <div class="card">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <h3>Visão do negócio</h3>
+          <p>Frequência, conversão e retenção em um só lugar, para a equipe saber quem precisa de atenção.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <p class="section-lead">Sem aplicativo novo para baixar: alunos e equipe usam ferramentas que já conhecem.</p>
+      <ol class="steps">
+        <li><strong>O aluno manda uma mensagem</strong><span>Pelo WhatsApp do negócio, ele pergunta por horários, reserva uma aula ou tira dúvidas.</span></li>
+        <li><strong>A plataforma confere e registra</strong><span>A BizData Fit verifica vagas e regras do negócio e confirma a reserva.</span></li>
+        <li><strong>A equipe acompanha</strong><span>Donos e equipe consultam agendamentos e alunos, e assumem o atendimento quando preciso.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="soft" id="para-quem">
+    <div class="wrap">
+      <h2>Para quem é</h2>
+      <p class="section-lead">Negócios que vendem aulas e acompanham a participação recorrente dos alunos.</p>
+      <ul class="tags">
+        <li>Estúdios de treino funcional</li>
+        <li>Academias</li>
+        <li>Estúdios de pilates</li>
+        <li>Estúdios de yoga</li>
+        <li>Clubes esportivos</li>
+        <li>Assessorias e escolas de esporte</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 BizData Fit</span>
+    <span>bizdatafit.com.br</span>
+  </div>
+</footer>
+</body>
+</html>
