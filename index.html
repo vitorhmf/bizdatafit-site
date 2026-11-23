@@ -76,6 +76,10 @@
   .tags li { border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; background: var(--bg); }
   footer { border-top: 1px solid var(--border); padding: 32px 0; color: var(--muted); font-size: 0.9rem; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  footer .legal {
+    flex-basis: 100%; margin: 0 0 12px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
+    color: var(--text); font-size: 1rem; line-height: 1.5; overflow-wrap: break-word;
+  }
   @media (max-width: 560px) {
     nav { display: none; }
     .hero { padding: 48px 0 40px; }
@@ -161,6 +165,7 @@
 
 <footer>
   <div class="wrap">
+    <p class="legal">BizData Fit é uma plataforma desenvolvida e operada pela METAPRO CONSULTORIA E TREINAMENTOS LTDA.</p>
     <span>© 2026 BizData Fit</span>
     <span>bizdatafit.com.br</span>
   </div>
